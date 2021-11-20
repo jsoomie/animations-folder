@@ -19,23 +19,21 @@ export const Main = () => {
           ease: "power2.in",
         },
         1
+      )
+      .fromTo(
+        ".button",
+        {
+          opacity: 0,
+          scale: 0,
+          rotation: 720,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+        },
+        3
       );
-
-    gsap.fromTo(
-      ".button",
-      {
-        opacity: 0,
-        scale: 0,
-        rotation: 720,
-      },
-      {
-        duration: 1,
-        delay: 3.5,
-        opacity: 1,
-        scale: 1,
-        rotation: 0,
-      }
-    );
   }, [timeline]);
 
   return (
