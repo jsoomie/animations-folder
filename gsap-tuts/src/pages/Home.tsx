@@ -1,9 +1,10 @@
+import { Fragment } from "react";
 import { Main } from "components";
 
 export const Home = () => {
   return (
-    <div>
+    <Fragment>
       <Main />
-    </div>
+    </Fragment>
   );
 };
