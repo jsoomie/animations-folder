@@ -17,6 +17,22 @@ export const Main = () => {
       delay: 1.5,
       ease: "power2.in",
     });
+
+    gsap.fromTo(
+      ".button",
+      {
+        opacity: 0,
+        scale: 0,
+        rotation: 720,
+      },
+      {
+        duration: 1,
+        delay: 3.5,
+        opacity: 1,
+        scale: 1,
+        rotation: 0,
+      }
+    );
   }, []);
 
   return (
