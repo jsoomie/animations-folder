@@ -1,17 +1,14 @@
 import "./footer.css";
-import { useEffect } from "react";
 import { gsap } from "gsap";
 
-export const Footer = () => {
-  useEffect(() => {
-    gsap.to("#Footer", {
-      duration: 1,
-      y: 0,
-      ease: "elastic",
-      delay: 2.5,
-    });
+export const footerAnimate = () => {
+  return gsap.to("#Footer", {
+    y: 0,
+    ease: "elastic",
   });
+};
 
+export const Footer = () => {
   return (
     <div id="Footer">
       <h1>Footer</h1>

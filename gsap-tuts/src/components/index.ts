@@ -1,3 +1,3 @@
 export { Main } from "./Main";
-export { Footer } from "./Footer";
-export { Navbar } from "./Navbar";
+export { Footer, footerAnimate } from "./Footer";
+export { Navbar, navAnimate, linksAnimate } from "./Navbar";
