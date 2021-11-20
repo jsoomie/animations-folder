@@ -18,6 +18,7 @@ export const Main = () => {
       ease: "power2.in",
     });
   }, []);
+
   return (
     <div id="Main">
       <div className="content">
