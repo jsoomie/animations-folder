@@ -1,4 +1,5 @@
 import { useSpring, animated } from "react-spring";
+import { Toggle } from "components";
 
 export const Menu = () => {
   const fade = useSpring({
@@ -8,9 +9,12 @@ export const Menu = () => {
 
   return (
     <animated.div style={fade}>
-      <h1>
-        <a href="/">Menu</a>
-      </h1>
+      <a href="/">
+        <h1>Menu</h1>
+      </a>
+      <main>
+        <Toggle />
+      </main>
     </animated.div>
   );
 };
