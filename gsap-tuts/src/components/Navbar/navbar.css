@@ -1,0 +1,7 @@
+#Navbar {
+  background-color: red;
+  padding: 1rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+}
