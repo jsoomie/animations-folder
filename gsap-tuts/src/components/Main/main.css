@@ -1,0 +1,20 @@
+#Main {
+  background-color: antiquewhite;
+  display: flex;
+}
+
+#Main .content {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  height: 70vh;
+}
+
+#Main .button {
+  align-self: center;
+}
+
+#Main .sidebar {
+  background-color: blue;
+  width: 15vw;
+}
