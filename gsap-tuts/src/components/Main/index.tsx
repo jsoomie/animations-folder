@@ -36,7 +36,7 @@ export const Main = () => {
         rotation: 0,
       }
     );
-  }, []);
+  }, [timeline]);
 
   return (
     <div id="Main">
