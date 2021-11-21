@@ -1,11 +1,12 @@
 import "./App.css";
 import { Home } from "pages";
-import { Menu, Traversy } from "components";
+import { Menu, Traversy, Junk } from "components";
 function App() {
   return (
     <div className="App">
       <Home />
-      <Traversy />
+      {/* <Traversy /> */}
+      <Junk />
       <header className="App-header">
         <Menu />
       </header>
