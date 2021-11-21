@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <Home />
-      {/* <Traversy /> */}
+      <Traversy />
       <Junk />
       <header className="App-header">
         <Menu />
