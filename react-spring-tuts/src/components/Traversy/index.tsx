@@ -1,7 +1,8 @@
+import { Section01 } from "./Section01";
 export const Traversy = () => {
   return (
     <div>
-      <h1>Traversy</h1>
+      <Section01 />
     </div>
   );
 };
