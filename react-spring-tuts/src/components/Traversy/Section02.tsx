@@ -1,4 +1,5 @@
 import { useSpring, animated } from "react-spring";
+import { MouseEventHandler } from "react";
 
 const { component } = {
   component: {
@@ -8,7 +9,11 @@ const { component } = {
   },
 };
 
-export const Section02 = () => {
+interface IProps {
+  toggle: MouseEventHandler<HTMLButtonElement>;
+}
+
+export const Section02 = ({ toggle }: IProps) => {
   const animate = useSpring({
     from: {
       number: 0,
@@ -32,6 +37,7 @@ export const Section02 = () => {
           similique provident deserunt sit inventore! Corporis doloremque
           pariatur modi illum aperiam sint laudantium!
         </p>
+        <button onClick={toggle}>Toggle Section 3</button>
       </div>
     </animated.div>
   );
