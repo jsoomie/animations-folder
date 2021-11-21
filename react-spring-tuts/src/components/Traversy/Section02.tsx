@@ -11,9 +11,15 @@ const { component } = {
 export const Section02 = () => {
   const animate = useSpring({
     from: {
+      number: 0,
       opacity: 0,
     },
     opacity: 1,
+    delay: 1000,
+    number: 10,
+    config: {
+      duration: 1000,
+    },
   });
 
   return (
