@@ -9,7 +9,7 @@ const { component } = {
 };
 
 export const Section01 = () => {
-  const fade = useSpring({
+  const animate = useSpring({
     from: {
       opacity: 0,
       marginTop: -500,
@@ -19,7 +19,7 @@ export const Section01 = () => {
   });
 
   return (
-    <animated.div style={fade}>
+    <animated.div style={animate}>
       <div style={component}>
         <h1>Section 01</h1>
         <p>
