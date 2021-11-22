@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { IProps } from "interfaces";
 import { motion } from "framer-motion";
-import { one, defaults } from "utils";
+import { one, defaults, buttonGlow, listSettings } from "utils";
 
-const { button, container } = {
+const { button, container, list } = {
   button: {
     from: {
       x: "-100vw",
@@ -11,11 +11,13 @@ const { button, container } = {
     to: {
       x: 0,
     },
+    onHover: buttonGlow,
     config: {
       type: defaults.SPRING,
       stiffness: 75,
     },
   },
+  list: listSettings,
   container: {
     from: {
       x: "100vw",
@@ -46,9 +48,14 @@ export const Base = ({ addBase, pizza }: IProps) => {
         {bases.map((base) => {
           let spanClass = pizza.base === base ? "active" : "";
           return (
-            <li key={base} onClick={() => addBase!(base)}>
+            <motion.li
+              whileHover={list.onHover}
+              transition={list.config}
+              key={base}
+              onClick={() => addBase!(base)}
+            >
               <span className={spanClass}>{base}</span>
-            </li>
+            </motion.li>
           );
         })}
       </ul>
@@ -61,7 +68,7 @@ export const Base = ({ addBase, pizza }: IProps) => {
           className="next"
         >
           <Link to="/toppings">
-            <button>Next</button>
+            <motion.button whileHover={button.onHover}>Next</motion.button>
           </Link>
         </motion.div>
       )}

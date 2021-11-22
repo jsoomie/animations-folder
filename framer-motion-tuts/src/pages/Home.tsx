@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { defaults, one } from "utils";
+import { defaults, one, buttonGlow } from "utils";
 
 const { button, container } = {
   button: {
     to: {
       scale: defaults.SCALE,
     },
+    onHover: buttonGlow,
   },
   container: {
     from: {
@@ -32,7 +33,9 @@ export const Home = () => {
     >
       <h2>Welcome to Pizza Joint</h2>
       <Link to="/base">
-        <motion.button animate={button.to}>Create Your Pizza</motion.button>
+        <motion.button animate={button.to} whileHover={button.onHover}>
+          Create Your Pizza
+        </motion.button>
       </Link>
     </motion.div>
   );
