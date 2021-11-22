@@ -13,7 +13,7 @@ const { button, container } = {
     },
     config: {
       type: defaults.SPRING,
-      stiffness: 25,
+      stiffness: 75,
     },
   },
   container: {
