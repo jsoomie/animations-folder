@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { IProps } from "interfaces";
 
 export const Base = ({ addBase, pizza }: IProps) => {
-  const bases = ["Classic", "Thin & Crispy", "Thick Crust"];
+  const bases = ["Classic", "Thin & Crispy", "Thick Crust", "Cheese Crust"];
 
   return (
     <div className="base container">
