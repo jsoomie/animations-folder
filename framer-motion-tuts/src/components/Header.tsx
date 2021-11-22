@@ -1,4 +1,14 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const { headerFrom, headerTo } = {
+  headerFrom: {
+    y: "-100px",
+  },
+  headerTo: {
+    y: "-10px",
+  },
+};
 
 export const Header = () => {
   return (
@@ -16,11 +26,11 @@ export const Header = () => {
           <path fill="none" d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z" />
         </svg>
       </div>
-      <div className="title">
+      <motion.div initial={headerFrom} animate={headerTo} className="title">
         <Link to="/">
           <h1>Pizza Joint</h1>
         </Link>
-      </div>
+      </motion.div>
     </header>
   );
 };
