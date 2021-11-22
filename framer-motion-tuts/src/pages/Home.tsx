@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const { button, container } = {
+  button: {
+    scale: 1,
+  },
+  container: {
+    scale: 1,
+  },
+};
 
 export const Home = () => {
   return (
-    <div className="home container">
+    <motion.div animate={container} className="home container">
       <h2>Welcome to Pizza Joint</h2>
       <Link to="/base">
-        <button>Create Your Pizza</button>
+        <motion.button animate={button}>Create Your Pizza</motion.button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
