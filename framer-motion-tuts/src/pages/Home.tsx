@@ -1,21 +1,38 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { defaults, one } from "utils";
 
 const { button, container } = {
   button: {
-    scale: 1,
+    to: {
+      scale: defaults.SCALE,
+    },
   },
   container: {
-    scale: 1,
+    from: {
+      opacity: defaults.OPACITY_ZERO,
+    },
+    to: {
+      opacity: defaults.OPACITY_FULL,
+    },
+    config: {
+      delay: defaults.DELAY - one.THIRD,
+      duration: defaults.DURATION + one.THIRD,
+    },
   },
 };
 
 export const Home = () => {
   return (
-    <motion.div animate={container} className="home container">
+    <motion.div
+      initial={container.from}
+      animate={container.to}
+      transition={container.config}
+      className="home container"
+    >
       <h2>Welcome to Pizza Joint</h2>
       <Link to="/base">
-        <motion.button animate={button}>Create Your Pizza</motion.button>
+        <motion.button animate={button.to}>Create Your Pizza</motion.button>
       </Link>
     </motion.div>
   );

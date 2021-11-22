@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { one } from "utils";
 
-const { headerFrom, headerTo } = {
-  headerFrom: {
-    y: "-100px",
-  },
-  headerTo: {
-    y: "-10px",
+const { header } = {
+  header: {
+    from: {
+      y: "-100px",
+    },
+    to: {
+      y: "-10px",
+    },
+    config: {
+      type: "spring",
+      stiffness: 25,
+      delay: one.QUARTER,
+    },
   },
 };
 
@@ -26,7 +34,12 @@ export const Header = () => {
           <path fill="none" d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z" />
         </svg>
       </div>
-      <motion.div initial={headerFrom} animate={headerTo} className="title">
+      <motion.div
+        initial={header.from}
+        animate={header.to}
+        transition={header.config}
+        className="title"
+      >
         <Link to="/">
           <h1>Pizza Joint</h1>
         </Link>
