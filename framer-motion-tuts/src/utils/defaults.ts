@@ -42,3 +42,22 @@ export const listSettings = {
   onHover: listGlow,
   config: listConfig,
 };
+
+export const containerVariant = {
+  from: {
+    opacity: one.ZERO,
+    x: "100vw",
+  },
+  to: {
+    opacity: defaults.OPACITY_FULL,
+    x: one.ZERO,
+    transition: {
+      type: defaults.SPRING,
+      stiffness: 75,
+      mass: one.HALF,
+      damping: 8,
+      when: "beforeChildren",
+      staggerChildren: 0.4,
+    },
+  },
+};

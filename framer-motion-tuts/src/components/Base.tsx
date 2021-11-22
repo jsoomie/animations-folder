@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import { IProps } from "interfaces";
 import { motion } from "framer-motion";
-import { one, defaults, buttonGlow, listSettings } from "utils";
+import {
+  one,
+  defaults,
+  buttonGlow,
+  listSettings,
+  containerVariant,
+} from "utils";
 
 const { button, container, list } = {
   button: {
@@ -9,28 +15,17 @@ const { button, container, list } = {
       x: "-100vw",
     },
     to: {
-      x: 0,
+      x: one.ZERO,
+      transition: {
+        type: defaults.SPRING,
+        stiffness: 75,
+      },
     },
     onHover: buttonGlow,
-    config: {
-      type: defaults.SPRING,
-      stiffness: 75,
-    },
   },
+
   list: listSettings,
-  container: {
-    from: {
-      x: "100vw",
-    },
-    to: {
-      x: one.ZERO,
-    },
-    config: {
-      type: defaults.SPRING,
-      stiffness: 75,
-      delay: one.HALF,
-    },
-  },
+  container: containerVariant,
 };
 
 export const Base = ({ addBase, pizza }: IProps) => {
@@ -38,9 +33,9 @@ export const Base = ({ addBase, pizza }: IProps) => {
 
   return (
     <motion.div
-      initial={container.from}
-      animate={container.to}
-      transition={container.config}
+      variants={container}
+      initial="from"
+      animate="to"
       className="base container"
     >
       <h3>Step 1: Choose your base</h3>
@@ -61,12 +56,7 @@ export const Base = ({ addBase, pizza }: IProps) => {
       </ul>
 
       {pizza.base && (
-        <motion.div
-          initial={button.from}
-          animate={button.to}
-          transition={button.config}
-          className="next"
-        >
+        <motion.div variants={button} className="next">
           <Link to="/toppings">
             <motion.button whileHover={button.onHover}>Next</motion.button>
           </Link>

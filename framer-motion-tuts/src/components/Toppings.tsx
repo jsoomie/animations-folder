@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { IProps } from "interfaces";
 import { motion } from "framer-motion";
-import { buttonGlow, listSettings } from "utils";
+import { buttonGlow, listSettings, containerVariant } from "utils";
 
-const { button, list } = {
+const { button, list, container } = {
   button: {
     onHover: buttonGlow,
   },
   list: listSettings,
+  container: containerVariant,
 };
 
 export const Toppings = ({ addTopping, pizza }: IProps) => {
@@ -21,9 +22,13 @@ export const Toppings = ({ addTopping, pizza }: IProps) => {
   ];
 
   return (
-    <div className="toppings container">
+    <motion.div
+      variants={container}
+      initial="from"
+      animate="to"
+      className="toppings container"
+    >
       <h3>Step 2: Choose Toppings</h3>
-
       <ul>
         {toppings.map((topping) => {
           let spanClass = pizza.toppings.includes(topping) ? "active" : "";
@@ -43,6 +48,6 @@ export const Toppings = ({ addTopping, pizza }: IProps) => {
       <Link to="/order">
         <motion.button whileHover={button.onHover}>Order</motion.button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
