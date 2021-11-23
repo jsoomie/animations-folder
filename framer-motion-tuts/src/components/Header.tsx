@@ -21,22 +21,22 @@ const { header, svg, path } = {
       rotate: -180,
     },
     to: {
-      rotate: 0,
+      rotate: one.ZERO,
       transition: {
-        duration: 1,
+        duration: one.FULL,
       },
     },
   },
   path: {
     from: {
-      opacity: 0,
-      pathLength: 0,
+      opacity: one.ZERO,
+      pathLength: one.ZERO,
     },
     to: {
-      opacity: 1,
-      pathLength: 1,
+      opacity: one.FULL,
+      pathLength: one.FULL,
       transition: {
-        duration: 2,
+        duration: one.FULL * 2,
         ease: "easeInOut",
       },
     },
