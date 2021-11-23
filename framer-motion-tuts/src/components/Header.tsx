@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { one } from "utils";
 
-const { header, svg, path } = {
+const { header, svg, path, constraints } = {
   header: {
     from: {
       y: "-100px",
@@ -41,12 +41,23 @@ const { header, svg, path } = {
       },
     },
   },
+  constraints: {
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+  },
 };
 
 export const Header = () => {
   return (
     <header>
-      <div className="logo">
+      <motion.div
+        drag
+        dragConstraints={constraints}
+        dragElastic={0.7}
+        className="logo"
+      >
         <motion.svg
           variants={svg}
           initial="from"
@@ -66,7 +77,7 @@ export const Header = () => {
             d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z"
           />
         </motion.svg>
-      </div>
+      </motion.div>
       <motion.div
         variants={header}
         initial="from"
