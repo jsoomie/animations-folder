@@ -8,3 +8,8 @@ export interface IProps {
   addTopping?: Function;
   pizza: IPizzaState;
 }
+
+export interface IModal {
+  showModal: boolean;
+  setShowModal: Function;
+}

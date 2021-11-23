@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { IProps } from "interfaces";
+import { IModal, IProps } from "interfaces";
 import { containerVariant, defaults } from "utils";
-// import { useState } from "react";
+import { useEffect } from "react";
 
 const { container, child } = {
   container: containerVariant,
@@ -15,7 +15,14 @@ const { container, child } = {
   },
 };
 
-export const Order = ({ pizza }: IProps) => {
+export const Order = ({ pizza, setShowModal }: IProps & Partial<IModal>) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModal!(true);
+    }, 3500);
+    return () => clearTimeout(timer);
+  }, [setShowModal]);
+
   return (
     <motion.div
       variants={container}
