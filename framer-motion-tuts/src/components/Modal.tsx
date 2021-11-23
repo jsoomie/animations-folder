@@ -27,7 +27,7 @@ const { backdrop, modal } = {
   },
 };
 
-export const Modal = ({ showModal, setShowModal }: IModal) => {
+export const Modal = ({ showModal }: IModal) => {
   return (
     <AnimatePresence exitBeforeEnter>
       {showModal && (
