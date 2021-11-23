@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { defaults, one, buttonGlow } from "utils";
+import { Loader } from "components";
 
 const { button, container } = {
   button: {
@@ -41,6 +42,7 @@ export const Home = () => {
           Create Your Pizza
         </motion.button>
       </Link>
+      <Loader />
     </motion.div>
   );
 };
