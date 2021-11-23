@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { Home } from "pages";
 import { Header, Base, Toppings, Order } from "components";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { IPizzaState } from "interfaces";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   const [pizza, setPizza] = useState<IPizzaState>({
     base: "",
     toppings: [],
@@ -25,21 +27,23 @@ function App() {
   };
 
   return (
-    <Router>
+    <Fragment>
       <Header />
-      <Routes>
-        <Route
-          path="/base"
-          element={<Base addBase={addBase} pizza={pizza} />}
-        />
-        <Route
-          path="/toppings"
-          element={<Toppings addTopping={addTopping} pizza={pizza} />}
-        />
-        <Route path="/order" element={<Order pizza={pizza} />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
+      <AnimatePresence>
+        <Routes location={location} key={location.key}>
+          <Route
+            path="/base"
+            element={<Base addBase={addBase} pizza={pizza} />}
+          />
+          <Route
+            path="/toppings"
+            element={<Toppings addTopping={addTopping} pizza={pizza} />}
+          />
+          <Route path="/order" element={<Order pizza={pizza} />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </AnimatePresence>
+    </Fragment>
   );
 }
 

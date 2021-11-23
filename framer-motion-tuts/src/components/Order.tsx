@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { IProps } from "interfaces";
 import { containerVariant, defaults } from "utils";
+// import { useState } from "react";
 
 const { container, child } = {
   container: containerVariant,
@@ -22,7 +23,7 @@ export const Order = ({ pizza }: IProps) => {
       animate="to"
       className="container order"
     >
-      <h2>Thank you for your order :)</h2>
+      <h2>Thank you for your order</h2>
       <motion.p variants={child}>
         You ordered a {pizza.base} pizza with:
       </motion.p>
