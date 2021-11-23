@@ -4,9 +4,6 @@ import { defaults, one, buttonGlow } from "utils";
 
 const { button, container } = {
   button: {
-    to: {
-      scale: defaults.SCALE,
-    },
     onHover: buttonGlow,
   },
   container: {
@@ -33,7 +30,7 @@ export const Home = () => {
     >
       <h2>Welcome to Pizza Joint</h2>
       <Link to="/base">
-        <motion.button animate={button.to} whileHover={button.onHover}>
+        <motion.button variants={button} whileHover="onHover">
           Create Your Pizza
         </motion.button>
       </Link>

@@ -25,6 +25,10 @@ export const buttonGlow = {
   scale: defaults.SCALE + 0.1,
   textShadow: color.WHITE_GLOW,
   boxShadow: color.WHITE_GLOW,
+  transition: {
+    duration: one.FULL,
+    yoyo: Infinity,
+  },
 };
 
 export const listGlow = {
