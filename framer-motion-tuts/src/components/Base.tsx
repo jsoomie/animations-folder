@@ -36,6 +36,7 @@ export const Base = ({ addBase, pizza }: IProps) => {
       variants={container}
       initial="from"
       animate="to"
+      exit="exit"
       className="base container"
     >
       <h3>Step 1: Choose your base</h3>

@@ -54,7 +54,7 @@ export const containerVariant = {
   },
   to: {
     opacity: defaults.OPACITY_FULL,
-    x: one.ZERO,
+    x: 0,
     transition: {
       type: defaults.SPRING,
       stiffness: 75,
@@ -62,6 +62,12 @@ export const containerVariant = {
       damping: 8,
       when: "beforeChildren",
       staggerChildren: 0.4,
+    },
+  },
+  exit: {
+    x: "-100vw",
+    transition: {
+      ease: "easeInOut",
     },
   },
 };

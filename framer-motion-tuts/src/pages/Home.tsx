@@ -12,10 +12,16 @@ const { button, container } = {
     },
     to: {
       opacity: defaults.OPACITY_FULL,
+      transition: {
+        delay: defaults.DELAY - one.THIRD,
+        duration: defaults.DURATION,
+      },
     },
-    config: {
-      delay: defaults.DELAY - one.THIRD,
-      duration: defaults.DURATION + one.THIRD,
+    exit: {
+      x: "-100vw",
+      transition: {
+        ease: "easeInOut",
+      },
     },
   },
 };
@@ -23,9 +29,10 @@ const { button, container } = {
 export const Home = () => {
   return (
     <motion.div
-      initial={container.from}
-      animate={container.to}
-      transition={container.config}
+      variants={container}
+      initial="from"
+      animate="to"
+      exit="exit"
       className="home container"
     >
       <h2>Welcome to Pizza Joint</h2>

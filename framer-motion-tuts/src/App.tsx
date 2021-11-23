@@ -29,8 +29,8 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <AnimatePresence>
-        <Routes location={location} key={location.key}>
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
           <Route
             path="/base"
             element={<Base addBase={addBase} pizza={pizza} />}

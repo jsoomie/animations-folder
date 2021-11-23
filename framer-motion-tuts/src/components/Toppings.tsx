@@ -26,6 +26,7 @@ export const Toppings = ({ addTopping, pizza }: IProps) => {
       variants={container}
       initial="from"
       animate="to"
+      exit="exit"
       className="toppings container"
     >
       <h3>Step 2: Choose Toppings</h3>
